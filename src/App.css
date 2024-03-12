@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:link,
+a:active,
+a:visited {
+  outline: none;
+  color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav,
+footer,
+header,
+aside {
+  display: block;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+html {
+  overflow-y: scroll;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: "Jost";
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgba(212, 223, 177, 0.45);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #888;
   }
 }
+input,
+button,
+textarea {
+  font-family: inherit;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.my-btn {
+  margin: auto;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid;
+  width: 280px;
+}
+
+.calendar {
+  margin: 50px auto;
+}
+
+ul {
   display: flex;
+  justify-content: space-around;
+}
+.menu a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+main {
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
+  margin: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  width: 100%;
+  border-bottom: 1px solid;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-size: 36px;
+  font-weight: 700;
 }
