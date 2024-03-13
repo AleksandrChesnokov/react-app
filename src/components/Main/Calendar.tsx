@@ -9,6 +9,14 @@ export const Calendar = () => {
   const [buttonColor, setButtonColor] = useState("white");
   const [buttonText, setButtonText] = useState("Увеличить на +1");
   const [error, setError] = useState<boolean | null>(null);
+  const buttonMessages = [
+    "Спасибо за нажатие!",
+    "Отлично!",
+    "Продолжайте в том же духе!",
+    "Ура!",
+    "Великолепно!",
+    "Ты молодец!",
+  ];
 
   const randomColor = () => {
     const letters = "0123456789ABCDEF";
@@ -19,12 +27,13 @@ export const Calendar = () => {
     return color;
   };
 
-  const handleIncrement = () => {
-    setButtonText(
-      buttonText === "Увеличить на +1"
-        ? "Нажми, чтобы еще увеличить на +1 :)"
-        : "Увеличить на +1"
+  const handleChangeButton = () => {
+    const filteredMessages = buttonMessages.filter(
+      (message) => message !== buttonText
     );
+    const randomIndex = Math.floor(Math.random() * filteredMessages.length);
+    const newMessage = filteredMessages[randomIndex];
+    setButtonText(newMessage);
     setButtonColor(randomColor);
     setYear((prevYear) => dayjs(prevYear).add(1, "year"));
   };
@@ -40,7 +49,7 @@ export const Calendar = () => {
         error={error}
         text={buttonText}
         backgroundColor={buttonColor}
-        handleClick={handleIncrement}
+        handleClick={handleChangeButton}
       />
     </main>
   );
