@@ -27,13 +27,17 @@ export const Calendar = () => {
     return color;
   };
 
-  const handleChangeButton = () => {
+  const randomText = () => {
     const filteredMessages = buttonMessages.filter(
       (message) => message !== buttonText
     );
     const randomIndex = Math.floor(Math.random() * filteredMessages.length);
     const newMessage = filteredMessages[randomIndex];
-    setButtonText(newMessage);
+    return newMessage;
+  };
+
+  const handleChangeButton = () => {
+    setButtonText(randomText);
     setButtonColor(randomColor);
     setYear((prevYear) => dayjs(prevYear).add(1, "year"));
   };
